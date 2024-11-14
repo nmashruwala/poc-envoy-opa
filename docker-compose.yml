@@ -1,0 +1,29 @@
+services:
+  dummy-api:
+    build:
+      context: .
+      dockerfile: dummy-api/Dockerfile
+    ports:
+      - '8080:8080'
+
+  envoy:
+    image: envoyproxy/envoy:v1.23-latest
+    volumes:
+      - ./envoy/config.yaml:/etc/envoy/envoy.yaml
+    ports:
+      - '5200:8000'
+      - '5201:8001'
+
+  opa:
+    image: openpolicyagent/opa:latest-envoy-static
+    volumes:
+      - ./opa/policy.rego:/etc/policy.rego
+    command:
+      - run
+      - --server
+      - --log-level=debug
+      - --log-format=json-pretty
+      - --set=plugins.envoy_ext_authz_grpc.addr=:9191
+      - --set=decision_logs.console=true
+      - --set=plugins.envoy_ext_authz_grpc.path=envoy/authz/allow
+      - /etc/policy.rego
