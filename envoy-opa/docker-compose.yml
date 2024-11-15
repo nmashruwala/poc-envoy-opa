@@ -9,15 +9,15 @@ services:
   envoy:
     image: envoyproxy/envoy:v1.23-latest
     volumes:
-      - ./envoy/config.yaml:/etc/envoy/envoy.yaml
       - ./certs/server-cert.pem:/etc/envoy/certs/server-cert.pem
       - ./certs/server-key.pem:/etc/envoy/certs/server-key.pem
+      - ./certs/client-cert.pem:/etc/envoy/certs/client-cert.pem
       - ./certs/ca-cert.pem:/etc/envoy/certs/ca-cert.pem
+      - ./envoy/config.yaml:/etc/envoy/envoy.yaml
     ports:
       - '5200:8000'
       - '5201:8001'
-    environment:
-      - ENVOY_UID=0
+    command: ['envoy', '-c', '/etc/envoy/envoy.yaml', '--log-level', 'debug']
 
   opa:
     image: openpolicyagent/opa:latest-envoy-static

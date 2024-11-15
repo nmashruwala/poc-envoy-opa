@@ -21,7 +21,7 @@ def generate_token(team):
     claims = {
         "iss": "self",  # Match with 'issuer' in Envoy config
         "aud": "wasabiuser",
-        "exp": datetime.datetime.utcnow() + datetime.timedelta(hours=1),
+        "exp": datetime.datetime.utcnow() + datetime.timedelta(hours=24),
         "roles": [team]
     }
     # Generate and return JWT token
