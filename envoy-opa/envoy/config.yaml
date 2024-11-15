@@ -8,6 +8,7 @@ static_resources:
       # mTLS filter chain for inter-service requests
       - filter_chain_match:
           transport_protocol: "tls"
+          server_names: ["mtls-service"]
         transport_socket:
           name: envoy.transport_sockets.tls
           typed_config:
@@ -27,11 +28,11 @@ static_resources:
               route_config:
                 name: mtls_route
                 virtual_hosts:
-                - name: mtls_backend
-                  domains: ["*"]
-                  routes:
-                    - match: { prefix: "/" }
-                      route: { cluster: service }
+                  - name: mtls_backend
+                    domains: ["*"]
+                    routes:
+                      - match: { prefix: "/" }
+                        route: { cluster: service }
               http_filters:
                 - name: envoy.ext_authz
                   typed_config:
@@ -47,16 +48,23 @@ static_resources:
                         stat_prefix: ext_authz
                 - name: envoy.filters.http.router
                   typed_config:
-                    "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router         
+                    "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
 
       # TLS-only filter chain for OAuth user requests
       - filter_chain_match:
           transport_protocol: "tls"
+          server_names: ["oauth-user"]
         transport_socket:
           name: envoy.transport_sockets.tls
           typed_config:
             "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
             require_client_certificate: false
+            common_tls_context:
+              tls_certificates:
+                - certificate_chain: { filename: "/etc/envoy/certs/server-cert.pem" }
+                  private_key: { filename: "/etc/envoy/certs/server-key.pem" }
+              validation_context:
+                trusted_ca: { filename: "/etc/envoy/certs/ca-cert.pem" }
         filters:
           - name: envoy.filters.network.http_connection_manager
             typed_config:
@@ -65,11 +73,11 @@ static_resources:
               route_config:
                 name: user_route
                 virtual_hosts:
-                - name: oauth_backend
-                  domains: ["*"]
-                  routes:
-                    - match: { prefix: "/" }
-                      route: { cluster: service }
+                  - name: oauth_backend
+                    domains: ["*"]
+                    routes:
+                      - match: { prefix: "/" }
+                        route: { cluster: service }
               http_filters:
                 - name: envoy.filters.http.jwt_authn
                   typed_config:
@@ -89,6 +97,19 @@ static_resources:
                                 }
                               ]
                             }
+                    rules:
+                    - match:
+                        prefix: /health
+                    - match:
+                        prefix: /common
+                      requires:
+                        provider_and_audiences:
+                          provider_name: custom_provider
+                    - match:
+                        prefix: /workspaces
+                      requires:
+                        provider_and_audiences:
+                          provider_name: custom_provider
                 - name: envoy.ext_authz
                   typed_config:
                     "@type": type.googleapis.com/envoy.extensions.filters.http.ext_authz.v3.ExtAuthz
@@ -103,8 +124,8 @@ static_resources:
                         stat_prefix: ext_authz
                 - name: envoy.filters.http.router
                   typed_config:
-                    "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router         
-
+                    "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+                    
   clusters:
     - name: service
       connect_timeout: 0.25s
@@ -113,14 +134,27 @@ static_resources:
       load_assignment:
         cluster_name: service
         endpoints:
-        - lb_endpoints:
-          - endpoint:
-              address:
-                socket_address:
-                  address: dummy-api
-                  port_value: 8080
+          - lb_endpoints:
+              - endpoint:
+                  address:
+                    socket_address:
+                      address: dummy-api
+                      port_value: 8080
+
 admin:
   address:
     socket_address:
       address: 0.0.0.0
       port_value: 8001
+
+layered_runtime:
+  layers:
+    - name: static_layer_0
+      static_layer:
+        envoy:
+          resource_limits:
+            listener:
+              example_listener_name:
+                connection_limit: 10000
+        overload:
+          global_downstream_max_connections: 50000
