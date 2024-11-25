@@ -13,14 +13,14 @@ static_resources:
       listener_filters:
         - name: tls_inspector
           typed_config:
-            "@type": type.googleapis.com/envoy.extensions.filters.listener.tls_inspector.v3.TlsInspector
+            '@type': type.googleapis.com/envoy.extensions.filters.listener.tls_inspector.v3.TlsInspector
       filter_chains:
         - filter_chain_match:
             transport_protocol: tls
           filters:
             - name: envoy.filters.network.http_connection_manager
               typed_config:
-                "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+                '@type': type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
                 codec_type: AUTO
                 stat_prefix: ingress_https
                 upgrade_configs:
@@ -30,20 +30,20 @@ static_resources:
                   virtual_hosts:
                     - name: app
                       domains:
-                        - "*"
+                        - '*'
                       routes:
                         - match:
-                            prefix: "/"
+                            prefix: '/'
                           route:
                             cluster: test
                             # Some of the image layers are large and take a long time to upload/download.
                             # The default transaction timeout is 15s so we would often send a 504 timeout.
                             # Setting this timeout to 0s ensure that we never timeout a transaction.
-                            timeout: "0s"
+                            timeout: '0s'
                 http_filters:
                   - name: envoy.filters.http.lua
                     typed_config:
-                      "@type": type.googleapis.com/envoy.extensions.filters.http.lua.v3.Lua
+                      '@type': type.googleapis.com/envoy.extensions.filters.http.lua.v3.Lua
                       inline_code: |
                         function envoy_on_request(request_handle)
                           local stream_info = request_handle:streamInfo()
@@ -57,7 +57,7 @@ static_resources:
                         end
                   - name: envoy.filters.http.oauth2
                     typed_config:
-                      "@type": type.googleapis.com/envoy.extensions.filters.http.oauth2.v3.OAuth2
+                      '@type': type.googleapis.com/envoy.extensions.filters.http.oauth2.v3.OAuth2
                       config:
                         token_endpoint:
                           cluster: oauth
@@ -65,7 +65,7 @@ static_resources:
                           timeout: 3s
                         authorization_endpoint: https://dev-34238201.okta.com/oauth2/v1/authorize
                         # redirect_uri: "%REQ(x-forwarded-proto)%://%REQ(:authority)%/callback"
-                        redirect_uri: "https://localhost:13334/callback"
+                        redirect_uri: 'https://localhost:13334/callback'
                         pass_through_matcher:
                           - name: x-forwarded-client-cert
                             present_match: true
@@ -80,11 +80,11 @@ static_resources:
                           token_secret:
                             name: oidc-secret
                             sds_config:
-                              path: "/etc/envoy/oidc-secret.yaml"
+                              path: '/etc/envoy/oidc-secret.yaml'
                           hmac_secret:
                             name: hmac
                             sds_config:
-                              path: "/etc/envoy/hmac-secret.yaml"
+                              path: '/etc/envoy/hmac-secret.yaml'
                         # (Optional): defaults to 'user' scope if not provided
                         auth_scopes:
                           - email
@@ -95,21 +95,21 @@ static_resources:
                         # (Optional): set resource parameter for Authorization request
                   - name: envoy.filters.http.router
                     typed_config:
-                      "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+                      '@type': type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
           transport_socket:
             name: envoy.transport_sockets.tls
             typed_config:
-              "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+              '@type': type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
               # require_client_certificate: true
               common_tls_context:
                 validation_context:
                   trusted_ca:
-                    filename: "/var/run/autocert.step.sm/root.crt"
+                    filename: '/var/run/autocert.step.sm/root.crt'
                 tls_certificates:
                   - certificate_chain:
-                      filename: "/var/run/autocert.step.sm/site.crt"
+                      filename: '/var/run/autocert.step.sm/site.crt'
                     private_key:
-                      filename: "/var/run/autocert.step.sm/site.key"
+                      filename: '/var/run/autocert.step.sm/site.key'
   clusters:
     - name: test
       type: STRICT_DNS
@@ -134,10 +134,10 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: dev-79848668.okta.com
+                      address: dev-34238201.okta.com
                       port_value: 443
       transport_socket:
         name: envoy.transport_sockets.tls
         typed_config:
-          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
-          sni: dev-79848668.okta.com
+          '@type': type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
+          sni: dev-34238201.okta.com

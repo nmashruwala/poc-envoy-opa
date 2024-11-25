@@ -1,0 +1,15 @@
+services:
+  envoy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: envoy-test
+    environment:
+      - LOG_LEVEL=trace
+    volumes:
+      - ./envoy-lua-okta.yaml:/etc/envoy/envoy.yaml
+      - ./envoy-okta-oidc-secret.yaml:/etc/envoy/oidc-secret.yaml
+      - ./hmac-secret.yaml:/etc/envoy/hmac-secret.yaml
+      - ./certs:/var/run/autocert.step.sm
+    network_mode: host
+    restart: unless-stopped
