@@ -40,6 +40,7 @@ X509v3 Subject Alternative Name:
 
 
 kubectl create configmap authz-policy --from-file=policy.rego --dry-run=client -o yaml | kubectl replace -f -
+kubectl create configmap proxy-config --from-file=envoy.yaml --dry-run=client -o yaml | kubectl replace -f -
 kubectl get configmap authz-policy -o yaml
 kubectl rollout restart deployment example-app
 kubectl rollout restart deployment bundle-server
@@ -59,12 +60,25 @@ kubectl create configmap certs-config \
   --from-file=/home/users/nmashruwala/poc-envoy-opa/certs/site.crt \
   --from-file=/home/users/nmashruwala/poc-envoy-opa/certs/site.key
 
+kubectl create configmap certs-config --from-file=/home/users/nmashruwala/poc-envoy-opa/certs/site.crt --dry-run=client -o yaml | kubectl replace -f -
+
 
 kubectl run curl --restart=Never -it --rm --image curlimages/curl:8.1.2 -- sh
 
-kubectl run curl \
-  --restart=Never -it \
+
+kubectl run curl-pod --rm -i --tty \
+  --image=curlimages/curl:latest \
+  --dry-run=client -o yaml > curl-pod.yaml
+
+
+kubectl run curl4 \
+  --restart=Never -it --rm \
   --image=curlimages/curl:8.1.2 \
+  --mount type=configMap, configMapName=certs-config, target=/etc/certs \
+  -- sh
+
+kubectl run curl3 \
+  --restart=Never -it --rm \
   --overrides='{
     "apiVersion": "v1",
     "spec": {
@@ -85,3 +99,14 @@ kubectl run curl \
       }]
     }
   }' -- sh
+
+
+
+kubectl exec demo -c demo -- curl --cert /etc/ssl/certs/site.crt -i http://example-app/people
+
+
+
+--cert ./certs/site.crt --key ./certs/site.key --cacert ./certs/root.crt
+
+
+curl --cert /etc/certs/site.crt --key /etc/certs/site.key --cacert /etc/certs/root.crt -i http://example-app/people

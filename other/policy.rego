@@ -1,28 +1,21 @@
-# policy.rego
 package envoy.authz
 
 import rego.v1
 
-import input.attributes.request.http as http_request
-
 default allow := false
 
-# Allow if the CN matches a specific value
-allow {
-    input.request.headers["x-forwarded-client-cert"]
-    cn := parse_cert_cn(input.request.headers["x-forwarded-client-cert"])
-    valid_cn(cn)
+# Allow rule
+allow if is_cn_valid
+
+# Check if the Common Name (CN) is valid
+is_cn_valid if {
+    cert_header := input.attributes.request.http.headers["x-forwarded-client-cert"]
+    parts := split(cert_header, ";") # Split cert attributes
+    some part in parts
+    regex.match(`Subject=.{0,3}CN=(rabbitmq.rabbitmq.svc.cluster.local)`, part)
 }
 
-# Extract the CN from the certificate header
-parse_cert_cn(cert_header) = cn {
-    split(cert_header, ";", parts)    # Split cert attributes
-    some i
-    parts[i] == regex("Subject=.*CN=([^,]+)", parts[i], matches) # Extract CN
-    cn := matches[1]
-}
+# Extract the Common Name (CN) from the client certificate
+cn := input.client_certificates[0].Subject.CommonName
 
-# Validate the extracted CN against allowed values
-valid_cn(cn) {
-    cn == "rabbitmq.rabbitmq.svc.cluster.local"
-}
+allow if cn == "rabbitmq.rabbitmq.svc.cluster.local"

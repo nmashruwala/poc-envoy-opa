@@ -28,6 +28,7 @@ static_resources:
                     typed_config:
                       '@type': type.googleapis.com/envoy.extensions.filters.http.ext_authz.v3.ExtAuthz
                       transport_api_version: V3
+                      include_peer_certificate: true
                       with_request_body:
                         max_request_bytes: 8192
                         allow_partial_message: true

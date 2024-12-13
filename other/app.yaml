@@ -91,3 +91,8 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
+#  - '--tls-cert-file=/certs/site.crt'
+#             - '--tls-private-key-file=/certs/site.key'
+#             - '--tls-ca-cert-file=/certs/root.crt'
+#             - '--authentication=tls'
+#             - '--authorization=basic'
