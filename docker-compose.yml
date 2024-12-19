@@ -17,7 +17,7 @@ services:
     image: openpolicyagent/opa:latest-envoy
     network_mode: host
     volumes:
-      - ./policy.rego:/policy/policy.rego
+      - ./mtls.rego:/policy/policy.rego
     command:
       - run
       - --server
