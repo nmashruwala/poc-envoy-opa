@@ -61,10 +61,11 @@ static_resources:
                       config:
                         token_endpoint:
                           cluster: oauth
-                          uri: dev-34238201.okta.com/oauth2/v1/token
+                          uri: dev-79848668.okta.com/oauth2/v1/token
                           timeout: 3s
-                        authorization_endpoint: https://dev-34238201.okta.com/oauth2/v1/authorize
+                        authorization_endpoint: https://dev-79848668.okta.com/oauth2/v1/authorize
                         # redirect_uri: "%REQ(x-forwarded-proto)%://%REQ(:authority)%/callback"
+                        forward_bearer_token: true
                         redirect_uri: 'https://localhost:13334/callback'
                         pass_through_matcher:
                           - name: x-forwarded-client-cert
@@ -76,7 +77,7 @@ static_resources:
                           path:
                             exact: /signout
                         credentials:
-                          client_id: 0oaleelghwn3KyymT5d7
+                          client_id: 0oalbs0chia6cxF4v5d7
                           token_secret:
                             name: oidc-secret
                             sds_config:
@@ -105,6 +106,8 @@ static_resources:
                           target_uri: localhost:9191
                           stat_prefix: ext_authz
                         timeout: 0.5s
+                      include_peer_certificate: true
+                      include_tls_session: true
 
                   # (Optional): set resource parameter for Authorization request
                   - name: envoy.filters.http.router
@@ -148,10 +151,10 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: dev-34238201.okta.com
+                      address: dev-79848668.okta.com
                       port_value: 443
       transport_socket:
         name: envoy.transport_sockets.tls
         typed_config:
           '@type': type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
-          sni: dev-34238201.okta.com
+          sni: dev-79848668.okta.com

@@ -1,0 +1,565 @@
+{
+    "decision-id": "9dabf2bc-99a9-442e-b200-addc919cb6b0",
+    "level": "debug",
+    "msg": "no content-type header supplied, performing no body parsing",
+    "time": "2024-12-17T02:14:09Z"
+  }
+  {
+    "input": [
+      [
+        {
+          "type": "string",
+          "value": "attributes"
+        },
+        {
+          "type": "object",
+          "value": [
+            [
+              {
+                "type": "string",
+                "value": "destination"
+              },
+              {
+                "type": "object",
+                "value": [
+                  [
+                    {
+                      "type": "string",
+                      "value": "address"
+                    },
+                    {
+                      "type": "object",
+                      "value": [
+                        [
+                          {
+                            "type": "string",
+                            "value": "socketAddress"
+                          },
+                          {
+                            "type": "object",
+                            "value": [
+                              [
+                                {
+                                  "type": "string",
+                                  "value": "address"
+                                },
+                                {
+                                  "type": "string",
+                                  "value": "127.0.0.1"
+                                }
+                              ],
+                              [
+                                {
+                                  "type": "string",
+                                  "value": "portValue"
+                                },
+                                {
+                                  "type": "number",
+                                  "value": 13334
+                                }
+                              ]
+                            ]
+                          }
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "type": "string",
+                      "value": "principal"
+                    },
+                    {
+                      "type": "string",
+                      "value": "rabbitmq.rabbitmq.svc.cluster.local"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "type": "string",
+                "value": "metadataContext"
+              },
+              {
+                "type": "object",
+                "value": []
+              }
+            ],
+            [
+              {
+                "type": "string",
+                "value": "request"
+              },
+              {
+                "type": "object",
+                "value": [
+                  [
+                    {
+                      "type": "string",
+                      "value": "http"
+                    },
+                    {
+                      "type": "object",
+                      "value": [
+                        [
+                          {
+                            "type": "string",
+                            "value": "headers"
+                          },
+                          {
+                            "type": "object",
+                            "value": [
+                              [
+                                {
+                                  "type": "string",
+                                  "value": ":authority"
+                                },
+                                {
+                                  "type": "string",
+                                  "value": "localhost:13334"
+                                }
+                              ],
+                              [
+                                {
+                                  "type": "string",
+                                  "value": ":method"
+                                },
+                                {
+                                  "type": "string",
+                                  "value": "GET"
+                                }
+                              ],
+                              [
+                                {
+                                  "type": "string",
+                                  "value": ":path"
+                                },
+                                {
+                                  "type": "string",
+                                  "value": "/mtls"
+                                }
+                              ],
+                              [
+                                {
+                                  "type": "string",
+                                  "value": ":scheme"
+                                },
+                                {
+                                  "type": "string",
+                                  "value": "https"
+                                }
+                              ],
+                              [
+                                {
+                                  "type": "string",
+                                  "value": "accept"
+                                },
+                                {
+                                  "type": "string",
+                                  "value": "*/*"
+                                }
+                              ],
+                              [
+                                {
+                                  "type": "string",
+                                  "value": "user-agent"
+                                },
+                                {
+                                  "type": "string",
+                                  "value": "curl/7.58.0"
+                                }
+                              ],
+                              [
+                                {
+                                  "type": "string",
+                                  "value": "x-forwarded-client-cert"
+                                },
+                                {
+                                  "type": "string",
+                                  "value": "true"
+                                }
+                              ],
+                              [
+                                {
+                                  "type": "string",
+                                  "value": "x-forwarded-proto"
+                                },
+                                {
+                                  "type": "string",
+                                  "value": "https"
+                                }
+                              ],
+                              [
+                                {
+                                  "type": "string",
+                                  "value": "x-path"
+                                },
+                                {
+                                  "type": "string",
+                                  "value": "/mtls"
+                                }
+                              ],
+                              [
+                                {
+                                  "type": "string",
+                                  "value": "x-request-id"
+                                },
+                                {
+                                  "type": "string",
+                                  "value": "f3a62e69-6c27-4d02-bd99-cf052b6bff34"
+                                }
+                              ]
+                            ]
+                          }
+                        ],
+                        [
+                          {
+                            "type": "string",
+                            "value": "host"
+                          },
+                          {
+                            "type": "string",
+                            "value": "localhost:13334"
+                          }
+                        ],
+                        [
+                          {
+                            "type": "string",
+                            "value": "id"
+                          },
+                          {
+                            "type": "string",
+                            "value": "5187939998802685840"
+                          }
+                        ],
+                        [
+                          {
+                            "type": "string",
+                            "value": "method"
+                          },
+                          {
+                            "type": "string",
+                            "value": "GET"
+                          }
+                        ],
+                        [
+                          {
+                            "type": "string",
+                            "value": "path"
+                          },
+                          {
+                            "type": "string",
+                            "value": "/mtls"
+                          }
+                        ],
+                        [
+                          {
+                            "type": "string",
+                            "value": "protocol"
+                          },
+                          {
+                            "type": "string",
+                            "value": "HTTP/1.1"
+                          }
+                        ],
+                        [
+                          {
+                            "type": "string",
+                            "value": "scheme"
+                          },
+                          {
+                            "type": "string",
+                            "value": "https"
+                          }
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "type": "string",
+                      "value": "time"
+                    },
+                    {
+                      "type": "string",
+                      "value": "2024-12-17T02:14:09.087069Z"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "type": "string",
+                "value": "routeMetadataContext"
+              },
+              {
+                "type": "object",
+                "value": []
+              }
+            ],
+            [
+              {
+                "type": "string",
+                "value": "source"
+              },
+              {
+                "type": "object",
+                "value": [
+                  [
+                    {
+                      "type": "string",
+                      "value": "address"
+                    },
+                    {
+                      "type": "object",
+                      "value": [
+                        [
+                          {
+                            "type": "string",
+                            "value": "socketAddress"
+                          },
+                          {
+                            "type": "object",
+                            "value": [
+                              [
+                                {
+                                  "type": "string",
+                                  "value": "address"
+                                },
+                                {
+                                  "type": "string",
+                                  "value": "127.0.0.1"
+                                }
+                              ],
+                              [
+                                {
+                                  "type": "string",
+                                  "value": "portValue"
+                                },
+                                {
+                                  "type": "number",
+                                  "value": 40840
+                                }
+                              ]
+                            ]
+                          }
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "type": "string",
+                      "value": "certificate"
+                    },
+                    {
+                      "type": "string",
+                      "value": "-----BEGIN%20CERTIFICATE-----%0AMIICizCCAjCgAwIBAgIQJ%2BRRyFZzKS7igeUrKwuqsjAKBggqhkjOPQQDAjAhMR8w%0AHQYDVQQDExZnZW5lcmFsLmFscGhhZnIuYmV0YWZyMB4XDTI0MTIxNjA2NTIzNFoX%0ADTI0MTIxNzA2NTMzNFowLjEsMCoGA1UEAxMjcmFiYml0bXEucmFiYml0bXEuc3Zj%0ALmNsdXN0ZXIubG9jYWwwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASfMjxwmopo%0AU2RW45ghqf669Q5zYl2YijhtYXqjdTI4WLyjednq%2B0yuDG%2FR9WXB5MzKLknANYc4%0AefD5V2b457OXo4IBOzCCATcwHwYDVR0jBBgwFoAUNQu6CUYX2f0Sfb%2BauHSHLTAb%0AzQowDgYDVR0PAQH%2FBAQDAgeAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcD%0AAjAdBgNVHQ4EFgQUufQKFIaBrj5vGJRSsoHr%2FACPfugwewYDVR0RBHQwcoIjcmFi%0AYml0bXEucmFiYml0bXEuc3ZjLmNsdXN0ZXIubG9jYWyCFmdlbmVyYWwuYWxwaGFm%0Aci5iZXRhZnKCHCoucmFiYml0bXEucG9kLmNsdXN0ZXIubG9jYWyCCnJhYmJpdG1x%0ALSqCCWxvY2FsaG9zdDBJBgwrBgEEAYKkZMYoQAEEOTA3AgEBBAVhZG1pbgQreC1C%0AQWNCNncxSTFrZDhVbUdzR1o4aXZ0aE82WkgwU2p6V1FfenhDSm5aZzAKBggqhkjO%0APQQDAgNJADBGAiEAnccxNJbsjxkfjqtNBcoWcWEvsMEdEJj3FB3uuZoHXWMCIQDh%0AJUjM1dN3IrQxBRFR28ShJPxdqcMu7EL7zT3Oh5VxFQ%3D%3D%0A-----END%20CERTIFICATE-----%0A"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "string",
+                      "value": "principal"
+                    },
+                    {
+                      "type": "string",
+                      "value": "rabbitmq.rabbitmq.svc.cluster.local"
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "type": "string",
+                "value": "tlsSession"
+              },
+              {
+                "type": "object",
+                "value": [
+                  [
+                    {
+                      "type": "string",
+                      "value": "sni"
+                    },
+                    {
+                      "type": "string",
+                      "value": "localhost"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      [
+        {
+          "type": "string",
+          "value": "parsed_body"
+        },
+        {
+          "type": "null",
+          "value": {}
+        }
+      ],
+      [
+        {
+          "type": "string",
+          "value": "parsed_path"
+        },
+        {
+          "type": "array",
+          "value": [
+            {
+              "type": "string",
+              "value": "mtls"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "type": "string",
+          "value": "parsed_query"
+        },
+        {
+          "type": "object",
+          "value": []
+        }
+      ],
+      [
+        {
+          "type": "string",
+          "value": "truncated_body"
+        },
+        {
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      [
+        {
+          "type": "string",
+          "value": "version"
+        },
+        {
+          "type": "object",
+          "value": [
+            [
+              {
+                "type": "string",
+                "value": "encoding"
+              },
+              {
+                "type": "string",
+                "value": "protojson"
+              }
+            ],
+            [
+              {
+                "type": "string",
+                "value": "ext_authz"
+              },
+              {
+                "type": "string",
+                "value": "v3"
+              }
+            ]
+          ]
+        }
+      ]
+    ],
+    "level": "debug",
+    "msg": "Executing policy query.",
+    "query": "data.envoy.authz.allow",
+    "time": "2024-12-17T02:14:09Z",
+    "txn": 3
+  }
+  {
+    "decision_id": "9dabf2bc-99a9-442e-b200-addc919cb6b0",
+    "error": {
+      "message": "undefined decision"
+    },
+    "input": {
+      "attributes": {
+        "destination": {
+          "address": {
+            "socketAddress": {
+              "address": "127.0.0.1",
+              "portValue": 13334
+            }
+          },
+          "principal": "rabbitmq.rabbitmq.svc.cluster.local"
+        },
+        "metadataContext": {},
+        "request": {
+          "http": {
+            "headers": {
+              ":authority": "localhost:13334",
+              ":method": "GET",
+              ":path": "/mtls",
+              ":scheme": "https",
+              "accept": "*/*",
+              "user-agent": "curl/7.58.0",
+              "x-forwarded-client-cert": "true",
+              "x-forwarded-proto": "https",
+              "x-path": "/mtls",
+              "x-request-id": "f3a62e69-6c27-4d02-bd99-cf052b6bff34"
+            },
+            "host": "localhost:13334",
+            "id": "5187939998802685840",
+            "method": "GET",
+            "path": "/mtls",
+            "protocol": "HTTP/1.1",
+            "scheme": "https"
+          },
+          "time": "2024-12-17T02:14:09.087069Z"
+        },
+        "routeMetadataContext": {},
+        "source": {
+          "address": {
+            "socketAddress": {
+              "address": "127.0.0.1",
+              "portValue": 40840
+            }
+          },
+          "certificate": "-----BEGIN%20CERTIFICATE-----%0AMIICizCCAjCgAwIBAgIQJ%2BRRyFZzKS7igeUrKwuqsjAKBggqhkjOPQQDAjAhMR8w%0AHQYDVQQDExZnZW5lcmFsLmFscGhhZnIuYmV0YWZyMB4XDTI0MTIxNjA2NTIzNFoX%0ADTI0MTIxNzA2NTMzNFowLjEsMCoGA1UEAxMjcmFiYml0bXEucmFiYml0bXEuc3Zj%0ALmNsdXN0ZXIubG9jYWwwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASfMjxwmopo%0AU2RW45ghqf669Q5zYl2YijhtYXqjdTI4WLyjednq%2B0yuDG%2FR9WXB5MzKLknANYc4%0AefD5V2b457OXo4IBOzCCATcwHwYDVR0jBBgwFoAUNQu6CUYX2f0Sfb%2BauHSHLTAb%0AzQowDgYDVR0PAQH%2FBAQDAgeAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcD%0AAjAdBgNVHQ4EFgQUufQKFIaBrj5vGJRSsoHr%2FACPfugwewYDVR0RBHQwcoIjcmFi%0AYml0bXEucmFiYml0bXEuc3ZjLmNsdXN0ZXIubG9jYWyCFmdlbmVyYWwuYWxwaGFm%0Aci5iZXRhZnKCHCoucmFiYml0bXEucG9kLmNsdXN0ZXIubG9jYWyCCnJhYmJpdG1x%0ALSqCCWxvY2FsaG9zdDBJBgwrBgEEAYKkZMYoQAEEOTA3AgEBBAVhZG1pbgQreC1C%0AQWNCNncxSTFrZDhVbUdzR1o4aXZ0aE82WkgwU2p6V1FfenhDSm5aZzAKBggqhkjO%0APQQDAgNJADBGAiEAnccxNJbsjxkfjqtNBcoWcWEvsMEdEJj3FB3uuZoHXWMCIQDh%0AJUjM1dN3IrQxBRFR28ShJPxdqcMu7EL7zT3Oh5VxFQ%3D%3D%0A-----END%20CERTIFICATE-----%0A",
+          "principal": "rabbitmq.rabbitmq.svc.cluster.local"
+        },
+        "tlsSession": {
+          "sni": "localhost"
+        }
+      },
+      "parsed_body": null,
+      "parsed_path": [
+        "mtls"
+      ],
+      "parsed_query": {},
+      "truncated_body": false,
+      "version": {
+        "encoding": "protojson",
+        "ext_authz": "v3"
+      }
+    },
+    "labels": {
+      "id": "68df752a-86dd-47c2-bc4f-f8e904ae139f",
+      "version": "0.70.0-envoy-7"
+    },
+    "level": "info",
+    "metrics": {
+      "timer_rego_external_resolve_ns": 3816,
+      "timer_rego_query_compile_ns": 253117,
+      "timer_rego_query_eval_ns": 74472,
+      "timer_server_handler_ns": 2510592
+    },
+    "msg": "Decision Log",
+    "path": "envoy/authz/allow",
+    "time": "2024-12-17T02:14:09Z",
+    "timestamp": "2024-12-17T02:14:09.099485567Z",
+    "type": "openpolicyagent.org/decision_logs"
+  }
