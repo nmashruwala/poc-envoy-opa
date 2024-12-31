@@ -1,0 +1,89 @@
+{
+    "decision_id": "502b1ec4-9e36-410f-b561-196aa6d512a0",
+    "input": {
+      "attributes": {
+        "destination": {
+          "address": {
+            "socketAddress": {
+              "address": "127.0.0.1",
+              "portValue": 13334
+            }
+          },
+          "principal": "localhost"
+        },
+        "metadataContext": {},
+        "request": {
+          "http": {
+            "headers": {
+              ":authority": "localhost:13334",
+              ":method": "GET",
+              ":path": "/mtls",
+              ":scheme": "https",
+              "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+              "accept-encoding": "gzip, deflate, br, zstd",
+              "accept-language": "en-US,en;q=0.9",
+              "authorization": "Bearer eyJraWQiOiJiMTUxdDVtZnhCOU05cTN2b2ZtMTNxdXJQc0lRVU54cGtxVllEZlpFVlhVIiwidHlwIjoiYXBwbGljYXRpb25cL29rdGEtaW50ZXJuYWwtYXQrand0IiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULkVENWJxUzZrOEJfTl9VeXhtLXRja2ZfUDdpcjVtZXhrbldicHpQOUwxQlUiLCJpc3MiOiJodHRwczovL2Rldi03OTg0ODY2OC5va3RhLmNvbSIsImF1ZCI6Imh0dHBzOi8vZGV2LTc5ODQ4NjY4Lm9rdGEuY29tIiwic3ViIjoibWlyemEtd2FzYWJpQGdpdGh1Yi5va3RhaWRwIiwiaWF0IjoxNzM1MjI3NDQ3LCJleHAiOjE3MzUyMzEwNDcsImNpZCI6IjBvYWxiczBjaGlhNmN4RjR2NWQ3IiwidWlkIjoiMDB1bGJiOWtmbm1DQVJBY0g1ZDciLCJzY3AiOlsiZW1haWwiLCJvcGVuaWQiLCJwcm9maWxlIiwiZ3JvdXBzIl0sImF1dGhfdGltZSI6MTczNTIyNzM4OH0.ddpia5edEm3jOsVzBsO0sVRm2mpNgVhA_vgcKQKAQTAycWm0VilV2D3OtWPi1EeDlEqaPYflL7bTBKCHuAICoUUyIzgdwiGfXyrQfQHP7RMBkt-tXu2qrrtZ1M2cn9IY_b5uy7GCOdKy_OcVM7mIayGSX3-IBZyoJglzJX4IS7SaZVkOKt6QjcuBuQLzlN5rrgpgCEM2tKCI4w8q7hG_KCrHQM2EY1kY2g9I6PEJZa5zlMFfNUCVfR3l7xAP_oxpZbXruDbuDkTDyKp_oyNO_nFt9TkeNjm4qnUY_8ESWNNwfKhpmlpL-1s5THYlEDtuI8cOCRhsga-7IHzzKtCWbg",
+              "cookie": "OauthHMAC=m99QXb9+0gkKmXT4vQPvpNJg/s71XeEVzElior4jo8Q=; OauthExpires=1735231047; BearerToken=eyJraWQiOiJiMTUxdDVtZnhCOU05cTN2b2ZtMTNxdXJQc0lRVU54cGtxVllEZlpFVlhVIiwidHlwIjoiYXBwbGljYXRpb25cL29rdGEtaW50ZXJuYWwtYXQrand0IiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULkVENWJxUzZrOEJfTl9VeXhtLXRja2ZfUDdpcjVtZXhrbldicHpQOUwxQlUiLCJpc3MiOiJodHRwczovL2Rldi03OTg0ODY2OC5va3RhLmNvbSIsImF1ZCI6Imh0dHBzOi8vZGV2LTc5ODQ4NjY4Lm9rdGEuY29tIiwic3ViIjoibWlyemEtd2FzYWJpQGdpdGh1Yi5va3RhaWRwIiwiaWF0IjoxNzM1MjI3NDQ3LCJleHAiOjE3MzUyMzEwNDcsImNpZCI6IjBvYWxiczBjaGlhNmN4RjR2NWQ3IiwidWlkIjoiMDB1bGJiOWtmbm1DQVJBY0g1ZDciLCJzY3AiOlsiZW1haWwiLCJvcGVuaWQiLCJwcm9maWxlIiwiZ3JvdXBzIl0sImF1dGhfdGltZSI6MTczNTIyNzM4OH0.ddpia5edEm3jOsVzBsO0sVRm2mpNgVhA_vgcKQKAQTAycWm0VilV2D3OtWPi1EeDlEqaPYflL7bTBKCHuAICoUUyIzgdwiGfXyrQfQHP7RMBkt-tXu2qrrtZ1M2cn9IY_b5uy7GCOdKy_OcVM7mIayGSX3-IBZyoJglzJX4IS7SaZVkOKt6QjcuBuQLzlN5rrgpgCEM2tKCI4w8q7hG_KCrHQM2EY1kY2g9I6PEJZa5zlMFfNUCVfR3l7xAP_oxpZbXruDbuDkTDyKp_oyNO_nFt9TkeNjm4qnUY_8ESWNNwfKhpmlpL-1s5THYlEDtuI8cOCRhsga-7IHzzKtCWbg; IdToken=eyJraWQiOiJiMTUxdDVtZnhCOU05cTN2b2ZtMTNxdXJQc0lRVU54cGtxVllEZlpFVlhVIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIwMHVsYmI5a2ZubUNBUkFjSDVkNyIsIm5hbWUiOiJNaXJ6YSBNb2hhbW1hZCBBbGkgQmFpZyIsImVtYWlsIjoibW1pcnphQHdhc2FiaS5jb20iLCJ2ZXIiOjEsImlzcyI6Imh0dHBzOi8vZGV2LTc5ODQ4NjY4Lm9rdGEuY29tIiwiYXVkIjoiMG9hbGJzMGNoaWE2Y3hGNHY1ZDciLCJpYXQiOjE3MzUyMjc0NDcsImV4cCI6MTczNTIzMTA0NywianRpIjoiSUQuX3k3UzdhWk9IMVZYTUktMkgyc1ZDNHlBNTJsbzNMSzlyVUhFZm5vWHNlRSIsImFtciI6WyJtZmEiLCJvdHAiLCJwd2QiXSwiaWRwIjoiMG9hbGJiZHp1YXlEZ3BnYVE1ZDciLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJtaXJ6YS13YXNhYmlAZ2l0aHViLm9rdGFpZHAiLCJhdXRoX3RpbWUiOjE3MzUyMjczODgsImF0X2hhc2giOiJ4Q0xRdlZrUEF2R2JqRWlSUDRBLWZBIiwiZ3JvdXBzIjpbIkV2ZXJ5b25lIiwiZW52b3ktdGVzdC1ncm91cCJdfQ.upP0oWwC59kx-kBPppHfiWZnVJNijdoAN1uXyp_csAD_Q0Ma3tt7BYQhSYFGyDCmPqIsvqbWl661hvaAhBEbPZGv5C1KQEpx0h-JYjWUdWGqCGqLtSfKaULR9ng4_do1JYFbawIT0_o9DxzKS9udN8A4BKxmlqvAnJS8z7_9KXGSQDrbM9cp-KBX2h2Ey0NK-VIlfS76YuTIMpHi-5_aLkXEx-YKlsVlBioIokHse0ZZ80kM62A2Io2E8sTZY8sWvBRMyDOqkGF8UqeFv8ipZ9daeUHy2-YcvrobS4dpMHUOI_X5dWXh48450FxMOtfXshpIE6e-AgZQeFtQ11M4Hg",
+              "dnt": "1",
+              "sec-ch-ua": "\"Not?A_Brand\";v=\"99\", \"Chromium\";v=\"130\"",
+              "sec-ch-ua-mobile": "?0",
+              "sec-ch-ua-platform": "\"macOS\"",
+              "sec-fetch-dest": "document",
+              "sec-fetch-mode": "navigate",
+              "sec-fetch-site": "none",
+              "sec-fetch-user": "?1",
+              "upgrade-insecure-requests": "1",
+              "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+              "x-forwarded-proto": "https",
+              "x-path": "/mtls",
+              "x-request-id": "4eb4f6fe-f54e-4425-94df-4f6d0f65fdb7"
+            },
+            "host": "localhost:13334",
+            "id": "17317374150385571343",
+            "method": "GET",
+            "path": "/mtls",
+            "protocol": "HTTP/1.1",
+            "scheme": "https"
+          },
+          "time": "2024-12-26T15:37:27.175877Z"
+        },
+        "routeMetadataContext": {},
+        "source": {
+          "address": {
+            "socketAddress": {
+              "address": "127.0.0.1",
+              "portValue": 41058
+            }
+          }
+        },
+        "tlsSession": {
+          "sni": "localhost"
+        }
+      },
+      "parsed_body": null,
+      "parsed_path": [
+        "mtls"
+      ],
+      "parsed_query": {},
+      "truncated_body": false,
+      "version": {
+        "encoding": "protojson",
+        "ext_authz": "v3"
+      }
+    },
+    "labels": {
+      "id": "79189c8a-fd67-42d2-816d-2c11396ded23",
+      "version": "0.70.0-envoy-7"
+    },
+    "level": "info",
+    "metrics": {
+      "timer_rego_query_eval_ns": 656135,
+      "timer_server_handler_ns": 2940981
+    },
+    "msg": "Decision Log",
+    "path": "envoy/authz/allow",
+    "result": false,
+    "time": "2024-12-26T15:37:27Z",
+    "timestamp": "2024-12-26T15:37:27.180990496Z",
+    "type": "openpolicyagent.org/decision_logs"
+  }

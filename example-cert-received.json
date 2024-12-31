@@ -1,0 +1,156 @@
+{
+    "AuthorityKeyId": "AKxRLUvyAPrbnuodlqz/5vwyPTo=",
+    "BasicConstraintsValid": false,
+    "CRLDistributionPoints": null,
+    "DNSNames": [
+        "test1",
+        "test2",
+        "localhost"
+    ],
+    "EmailAddresses": null,
+    "ExcludedDNSDomains": null,
+    "ExcludedEmailAddresses": null,
+    "ExcludedIPRanges": null,
+    "ExcludedURIDomains": null,
+    "ExtKeyUsage": [
+        1,
+        2
+    ],
+    "Extensions": [
+        {
+            "Critical": true,
+            "Id": [
+                2,
+                5,
+                29,
+                15
+            ],
+            "Value": "AwIHgA=="
+        },
+        {
+            "Critical": false,
+            "Id": [
+                2,
+                5,
+                29,
+                37
+            ],
+            "Value": "MBQGCCsGAQUFBwMBBggrBgEFBQcDAg=="
+        },
+        {
+            "Critical": false,
+            "Id": [
+                2,
+                5,
+                29,
+                14
+            ],
+            "Value": "BBQaJxoQghbZ8mtqDpeI+M9txIjwwQ=="
+        },
+        {
+            "Critical": false,
+            "Id": [
+                2,
+                5,
+                29,
+                35
+            ],
+            "Value": "MBaAFACsUS1L8gD6257qHZas/+b8Mj06"
+        },
+        {
+            "Critical": false,
+            "Id": [
+                2,
+                5,
+                29,
+                17
+            ],
+            "Value": "MB+CBXRlc3QxggV0ZXN0MoIJbG9jYWxob3N0hwR/AAAB"
+        }
+    ],
+    "ExtraExtensions": null,
+    "IPAddresses": [
+        "127.0.0.1"
+    ],
+    "IsCA": false,
+    "Issuer": {
+        "CommonName": "root-ca",
+        "Country": null,
+        "ExtraNames": null,
+        "Locality": null,
+        "Names": [
+            {
+                "Type": [
+                    2,
+                    5,
+                    4,
+                    3
+                ],
+                "Value": "root-ca"
+            }
+        ],
+        "Organization": null,
+        "OrganizationalUnit": null,
+        "PostalCode": null,
+        "Province": null,
+        "SerialNumber": "",
+        "StreetAddress": null
+    },
+    "IssuingCertificateURL": null,
+    "KeyUsage": 1,
+    "MaxPathLen": 0,
+    "MaxPathLenZero": false,
+    "NotAfter": "2025-12-19T15:28:49Z",
+    "NotBefore": "2024-12-19T15:28:49Z",
+    "OCSPServer": null,
+    "PermittedDNSDomains": null,
+    "PermittedDNSDomainsCritical": false,
+    "PermittedEmailAddresses": null,
+    "PermittedIPRanges": null,
+    "PermittedURIDomains": null,
+    "Policies": null,
+    "PolicyIdentifiers": null,
+    "PublicKey": {
+        "Curve": {},
+        "X": 94612078907462741602645973317324604678941200226437376555170381364249407328072,
+        "Y": 82370412911530745290720892315059317337340512494185428050053580241060988574791
+    },
+    "PublicKeyAlgorithm": 3,
+    "Raw": "MIIBvzCCAWWgAwIBAgIRAKsf8mADGhMzSn0D7IHSd24wCgYIKoZIzj0EAwIwEjEQMA4GA1UEAxMHcm9vdC1jYTAeFw0yNDEyMTkxNTI4NDlaFw0yNTEyMTkxNTI4NDlaMBExDzANBgNVBAMTBmNsaWVudDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABNEsifog+/O+rcX9G9A30IUp8Lo7+ZaLVhB5MnN1PQ9IthwAZg+l14oJ/MgtwZ0CleMnajeLi0bhqLb9FytF3EejgZwwgZkwDgYDVR0PAQH/BAQDAgeAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAdBgNVHQ4EFgQUGicaEIIW2fJrag6XiPjPbcSI8MEwHwYDVR0jBBgwFoAUAKxRLUvyAPrbnuodlqz/5vwyPTowKAYDVR0RBCEwH4IFdGVzdDGCBXRlc3Qygglsb2NhbGhvc3SHBH8AAAEwCgYIKoZIzj0EAwIDSAAwRQIgIDqYin0Y0EkREU7az5IbFwpfLFisG81FoFTc8x/aCMMCIQCyWnoCAytWUW2m9s608mnZfx8GhSlEXztjA4fiCqqPuA==",
+    "RawIssuer": "MBIxEDAOBgNVBAMTB3Jvb3QtY2E=",
+    "RawSubject": "MBExDzANBgNVBAMTBmNsaWVudA==",
+    "RawSubjectPublicKeyInfo": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE0SyJ+iD7876txf0b0DfQhSnwujv5lotWEHkyc3U9D0i2HABmD6XXign8yC3BnQKV4ydqN4uLRuGotv0XK0XcRw==",
+    "RawTBSCertificate": "MIIBZaADAgECAhEAqx/yYAMaEzNKfQPsgdJ3bjAKBggqhkjOPQQDAjASMRAwDgYDVQQDEwdyb290LWNhMB4XDTI0MTIxOTE1Mjg0OVoXDTI1MTIxOTE1Mjg0OVowETEPMA0GA1UEAxMGY2xpZW50MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE0SyJ+iD7876txf0b0DfQhSnwujv5lotWEHkyc3U9D0i2HABmD6XXign8yC3BnQKV4ydqN4uLRuGotv0XK0XcR6OBnDCBmTAOBgNVHQ8BAf8EBAMCB4AwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMB0GA1UdDgQWBBQaJxoQghbZ8mtqDpeI+M9txIjwwTAfBgNVHSMEGDAWgBQArFEtS/IA+tue6h2WrP/m/DI9OjAoBgNVHREEITAfggV0ZXN0MYIFdGVzdDKCCWxvY2FsaG9zdIcEfwAAAQ==",
+    "SerialNumber": 227463864431822856768543045401558808430,
+    "Signature": "MEUCICA6mIp9GNBJERFO2s+SGxcKXyxYrBvNRaBU3PMf2gjDAiEAslp6AgMrVlFtpvbOtPJp2X8fBoUpRF87YwOH4gqqj7g=",
+    "SignatureAlgorithm": 10,
+    "Subject": {
+        "CommonName": "client",
+        "Country": null,
+        "ExtraNames": null,
+        "Locality": null,
+        "Names": [
+            {
+                "Type": [
+                    2,
+                    5,
+                    4,
+                    3
+                ],
+                "Value": "client"
+            }
+        ],
+        "Organization": null,
+        "OrganizationalUnit": null,
+        "PostalCode": null,
+        "Province": null,
+        "SerialNumber": "",
+        "StreetAddress": null
+    },
+    "SubjectKeyId": "GicaEIIW2fJrag6XiPjPbcSI8ME=",
+    "URIStrings": null,
+    "URIs": null,
+    "UnhandledCriticalExtensions": null,
+    "UnknownExtKeyUsage": null,
+    "Version": 3
+}

@@ -1,0 +1,476 @@
+{
+  "input": [
+    [
+      {
+        "type": "string",
+        "value": "attributes"
+      },
+      {
+        "type": "object",
+        "value": [
+          [
+            {
+              "type": "string",
+              "value": "destination"
+            },
+            {
+              "type": "object",
+              "value": [
+                [
+                  {
+                    "type": "string",
+                    "value": "address"
+                  },
+                  {
+                    "type": "object",
+                    "value": [
+                      [
+                        {
+                          "type": "string",
+                          "value": "socketAddress"
+                        },
+                        {
+                          "type": "object",
+                          "value": [
+                            [
+                              {
+                                "type": "string",
+                                "value": "address"
+                              },
+                              {
+                                "type": "string",
+                                "value": "127.0.0.1"
+                              }
+                            ],
+                            [
+                              {
+                                "type": "string",
+                                "value": "portValue"
+                              },
+                              {
+                                "type": "number",
+                                "value": 13334
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "type": "string",
+                    "value": "principal"
+                  },
+                  {
+                    "type": "string",
+                    "value": "rabbitmq.rabbitmq.svc.cluster.local"
+                  }
+                ]
+              ]
+            }
+          ],
+          [
+            {
+              "type": "string",
+              "value": "metadataContext"
+            },
+            {
+              "type": "object",
+              "value": []
+            }
+          ],
+          [
+            {
+              "type": "string",
+              "value": "request"
+            },
+            {
+              "type": "object",
+              "value": [
+                [
+                  {
+                    "type": "string",
+                    "value": "http"
+                  },
+                  {
+                    "type": "object",
+                    "value": [
+                      [
+                        {
+                          "type": "string",
+                          "value": "headers"
+                        },
+                        {
+                          "type": "object",
+                          "value": [
+                            [
+                              {
+                                "type": "string",
+                                "value": ":authority"
+                              },
+                              {
+                                "type": "string",
+                                "value": "localhost:13334"
+                              }
+                            ],
+                            [
+                              {
+                                "type": "string",
+                                "value": ":method"
+                              },
+                              {
+                                "type": "string",
+                                "value": "GET"
+                              }
+                            ],
+                            [
+                              {
+                                "type": "string",
+                                "value": ":path"
+                              },
+                              {
+                                "type": "string",
+                                "value": "/mtls"
+                              }
+                            ],
+                            [
+                              {
+                                "type": "string",
+                                "value": ":scheme"
+                              },
+                              {
+                                "type": "string",
+                                "value": "https"
+                              }
+                            ],
+                            [
+                              {
+                                "type": "string",
+                                "value": "accept"
+                              },
+                              {
+                                "type": "string",
+                                "value": "*/*"
+                              }
+                            ],
+                            [
+                              {
+                                "type": "string",
+                                "value": "user-agent"
+                              },
+                              {
+                                "type": "string",
+                                "value": "curl/7.58.0"
+                              }
+                            ],
+                            [
+                              {
+                                "type": "string",
+                                "value": "x-forwarded-client-cert"
+                              },
+                              {
+                                "type": "string",
+                                "value": "true"
+                              }
+                            ],
+                            [
+                              {
+                                "type": "string",
+                                "value": "x-forwarded-proto"
+                              },
+                              {
+                                "type": "string",
+                                "value": "https"
+                              }
+                            ],
+                            [
+                              {
+                                "type": "string",
+                                "value": "x-path"
+                              },
+                              {
+                                "type": "string",
+                                "value": "/mtls"
+                              }
+                            ],
+                            [
+                              {
+                                "type": "string",
+                                "value": "x-request-id"
+                              },
+                              {
+                                "type": "string",
+                                "value": "f3a62e69-6c27-4d02-bd99-cf052b6bff34"
+                              }
+                            ]
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "type": "string",
+                          "value": "host"
+                        },
+                        {
+                          "type": "string",
+                          "value": "localhost:13334"
+                        }
+                      ],
+                      [
+                        {
+                          "type": "string",
+                          "value": "id"
+                        },
+                        {
+                          "type": "string",
+                          "value": "5187939998802685840"
+                        }
+                      ],
+                      [
+                        {
+                          "type": "string",
+                          "value": "method"
+                        },
+                        {
+                          "type": "string",
+                          "value": "GET"
+                        }
+                      ],
+                      [
+                        {
+                          "type": "string",
+                          "value": "path"
+                        },
+                        {
+                          "type": "string",
+                          "value": "/mtls"
+                        }
+                      ],
+                      [
+                        {
+                          "type": "string",
+                          "value": "protocol"
+                        },
+                        {
+                          "type": "string",
+                          "value": "HTTP/1.1"
+                        }
+                      ],
+                      [
+                        {
+                          "type": "string",
+                          "value": "scheme"
+                        },
+                        {
+                          "type": "string",
+                          "value": "https"
+                        }
+                      ]
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "type": "string",
+                    "value": "time"
+                  },
+                  {
+                    "type": "string",
+                    "value": "2024-12-17T02:14:09.087069Z"
+                  }
+                ]
+              ]
+            }
+          ],
+          [
+            {
+              "type": "string",
+              "value": "routeMetadataContext"
+            },
+            {
+              "type": "object",
+              "value": []
+            }
+          ],
+          [
+            {
+              "type": "string",
+              "value": "source"
+            },
+            {
+              "type": "object",
+              "value": [
+                [
+                  {
+                    "type": "string",
+                    "value": "address"
+                  },
+                  {
+                    "type": "object",
+                    "value": [
+                      [
+                        {
+                          "type": "string",
+                          "value": "socketAddress"
+                        },
+                        {
+                          "type": "object",
+                          "value": [
+                            [
+                              {
+                                "type": "string",
+                                "value": "address"
+                              },
+                              {
+                                "type": "string",
+                                "value": "127.0.0.1"
+                              }
+                            ],
+                            [
+                              {
+                                "type": "string",
+                                "value": "portValue"
+                              },
+                              {
+                                "type": "number",
+                                "value": 40840
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "type": "string",
+                    "value": "certificate"
+                  },
+                  {
+                    "type": "string",
+                    "value": "-----BEGIN%20CERTIFICATE-----%0AMIICizCCAjCgAwIBAgIQJ%2BRRyFZzKS7igeUrKwuqsjAKBggqhkjOPQQDAjAhMR8w%0AHQYDVQQDExZnZW5lcmFsLmFscGhhZnIuYmV0YWZyMB4XDTI0MTIxNjA2NTIzNFoX%0ADTI0MTIxNzA2NTMzNFowLjEsMCoGA1UEAxMjcmFiYml0bXEucmFiYml0bXEuc3Zj%0ALmNsdXN0ZXIubG9jYWwwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASfMjxwmopo%0AU2RW45ghqf669Q5zYl2YijhtYXqjdTI4WLyjednq%2B0yuDG%2FR9WXB5MzKLknANYc4%0AefD5V2b457OXo4IBOzCCATcwHwYDVR0jBBgwFoAUNQu6CUYX2f0Sfb%2BauHSHLTAb%0AzQowDgYDVR0PAQH%2FBAQDAgeAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcD%0AAjAdBgNVHQ4EFgQUufQKFIaBrj5vGJRSsoHr%2FACPfugwewYDVR0RBHQwcoIjcmFi%0AYml0bXEucmFiYml0bXEuc3ZjLmNsdXN0ZXIubG9jYWyCFmdlbmVyYWwuYWxwaGFm%0Aci5iZXRhZnKCHCoucmFiYml0bXEucG9kLmNsdXN0ZXIubG9jYWyCCnJhYmJpdG1x%0ALSqCCWxvY2FsaG9zdDBJBgwrBgEEAYKkZMYoQAEEOTA3AgEBBAVhZG1pbgQreC1C%0AQWNCNncxSTFrZDhVbUdzR1o4aXZ0aE82WkgwU2p6V1FfenhDSm5aZzAKBggqhkjO%0APQQDAgNJADBGAiEAnccxNJbsjxkfjqtNBcoWcWEvsMEdEJj3FB3uuZoHXWMCIQDh%0AJUjM1dN3IrQxBRFR28ShJPxdqcMu7EL7zT3Oh5VxFQ%3D%3D%0A-----END%20CERTIFICATE-----%0A"
+                  }
+                ],
+                [
+                  {
+                    "type": "string",
+                    "value": "principal"
+                  },
+                  {
+                    "type": "string",
+                    "value": "rabbitmq.rabbitmq.svc.cluster.local"
+                  }
+                ]
+              ]
+            }
+          ],
+          [
+            {
+              "type": "string",
+              "value": "tlsSession"
+            },
+            {
+              "type": "object",
+              "value": [
+                [
+                  {
+                    "type": "string",
+                    "value": "sni"
+                  },
+                  {
+                    "type": "string",
+                    "value": "localhost"
+                  }
+                ]
+              ]
+            }
+          ]
+        ]
+      }
+    ],
+    [
+      {
+        "type": "string",
+        "value": "parsed_body"
+      },
+      {
+        "type": "null",
+        "value": {}
+      }
+    ],
+    [
+      {
+        "type": "string",
+        "value": "parsed_path"
+      },
+      {
+        "type": "array",
+        "value": [
+          {
+            "type": "string",
+            "value": "mtls"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "string",
+        "value": "parsed_query"
+      },
+      {
+        "type": "object",
+        "value": []
+      }
+    ],
+    [
+      {
+        "type": "string",
+        "value": "truncated_body"
+      },
+      {
+        "type": "boolean",
+        "value": false
+      }
+    ],
+    [
+      {
+        "type": "string",
+        "value": "version"
+      },
+      {
+        "type": "object",
+        "value": [
+          [
+            {
+              "type": "string",
+              "value": "encoding"
+            },
+            {
+              "type": "string",
+              "value": "protojson"
+            }
+          ],
+          [
+            {
+              "type": "string",
+              "value": "ext_authz"
+            },
+            {
+              "type": "string",
+              "value": "v3"
+            }
+          ]
+        ]
+      }
+    ]
+  ],
+  "level": "debug",
+  "msg": "Executing policy query.",
+  "query": "data.envoy.authz.allow",
+  "time": "2024-12-17T02:14:09Z",
+  "txn": 3
+}

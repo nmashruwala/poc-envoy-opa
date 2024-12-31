@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  envoy:
+    image: harbor.wsbidev.net/stage-needham/wasabi/envoy-contrib:7.23.3307-2024-10-25-31a72718fc
+    container_name: envoy
+    environment:
+      - LOG_LEVEL=trace
+    volumes:
+      - ./envoy-okta-oidc/envoy-lua-okta-oidc.yaml:/etc/envoy/envoy.yaml
+      - ./envoy-okta-oidc/envoy-okta-oidc-secret.yaml:/etc/envoy/oidc-secret.yaml
+      - ./envoy-okta-oidc/hmac-secret.yaml:/etc/envoy/hmac-secret.yaml
+      - ./envoy-okta-oidc/smallstep:/var/run/autocert.step.sm
+    network_mode: host
+    restart: unless-stopped
+  opa:
+    container_name: opa
+    image: openpolicyagent/opa:latest-envoy
+    network_mode: host
+    volumes:
+      # - ./mtls.rego:/policy/policy.rego
+      - ./policies/oidc.rego:/policy/policy.rego
+    command:
+      - run
+      - --server
+      - --log-level=debug
+      - --log-format=json-pretty
+      - --addr=localhost:8282
+      - --set=plugins.envoy_ext_authz_grpc.addr=:9191
+      - --set=decision_logs.console=true
+      - --set=plugins.envoy_ext_authz_grpc.path=envoy/authz/allow
+      - /policy/policy.rego
