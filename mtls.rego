@@ -1,13 +1,13 @@
+# THIS POLICY IS AN EXAMPLE FOR CN OR SAN MATCH OF CLIENT CERTIFICATE
 # policy.rego
 package envoy.authz
-
 import rego.v1
 
 import input.attributes.request.http as http_request
 
 default allow := false
 
-cert_data := crypto.x509.parse_certificates(urlquery.decode(input.attributes.source.certificate))[0]
+cert_data := crypto.x509.parse_certificates(urlquery.decode(input.attributes.requests.certificate))[0]
 
 is_mtls_path if {
 	input.attributes.request.http.method == "GET"
